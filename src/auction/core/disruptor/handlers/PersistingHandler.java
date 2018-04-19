@@ -1,6 +1,6 @@
-package com.bidding.handlers;
+package auction.core.disruptor.handlers;
 
-import com.bidding.entity.Bid;
+import auction.events.EventBase;
 import com.lmax.disruptor.EventHandler;
 import config.Config;
 
@@ -16,7 +16,7 @@ public class PersistingHandler implements EventHandler {
 
     @Override
     public void onEvent(Object event, long sequence, boolean endOfBatch) throws Exception {
-        Bid b = (Bid) event;
-        writer.write(b.getRawMessage() + "\n");
+        EventBase e = (EventBase) event;
+        writer.write(e.getRawMessage() + "\n");
     }
 }

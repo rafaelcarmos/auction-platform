@@ -1,7 +1,7 @@
-package com.bidding.handlers;
+package auction.core.disruptor.handlers;
 
-import com.bidding.entity.Bid;
-import com.bidding.entity.Item;
+import auction.entities.Item;
+import auction.events.EventBase;
 import com.lmax.disruptor.EventHandler;
 
 import java.util.Map;
@@ -16,10 +16,8 @@ public class ParsingHandler implements EventHandler {
 
     @Override
     public void onEvent(Object event, long sequence, boolean endOfBatch) {
-        Bid b = (Bid) event;
+        EventBase b = (EventBase) event;
         String[] split = b.getRawMessage().split(";");
-        b.setBidder(split[0]);
-        b.setItem(items.get(split[1]));
-        b.setOffer(Double.parseDouble(split[2]));
+
     }
 }
