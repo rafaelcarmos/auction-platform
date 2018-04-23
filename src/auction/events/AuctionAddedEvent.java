@@ -2,7 +2,7 @@ package auction.events;
 
 import auction.entities.Auction;
 
-public class AuctionAddedEvent {
+public class AuctionAddedEvent implements Event {
 
     private Auction auction;
 

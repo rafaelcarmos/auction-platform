@@ -1,4 +1,4 @@
-package auction.core.disruptor.handlers;
+package auction.core.handlers;
 
 import auction.events.EventBase;
 import com.lmax.disruptor.EventHandler;

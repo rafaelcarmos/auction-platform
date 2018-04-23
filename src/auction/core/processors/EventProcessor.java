@@ -1,6 +1,4 @@
-package auction.core;
-
-import auction.events.EventBase;
+package auction.core.processors;
 
 import java.io.File;
 
@@ -8,7 +6,7 @@ import java.io.File;
 public interface EventProcessor {
 
     //add event to Queue and inform to handlers
-    void processEvent(EventBase event);
+    void processEvent(String eventString);
 
     //replay events in sequence from a file
     void replayEventsFromFile(File file);

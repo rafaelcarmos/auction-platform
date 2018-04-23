@@ -12,7 +12,7 @@ public class Config {
     public static Properties getProperties() {
         try {
             if (props == null) {
-                File f = new File("settings.xml");
+                File f = new File("settings");
                 if (f.exists()) {
                     props = new Properties();
                     props.loadFromXML(new FileInputStream(f));

@@ -7,6 +7,7 @@ public class EventBase {
     private String rawMessage;
     private LocalDateTime timestamp;
     private EventType eventType;
+    private Event event;
 
     public EventBase() {
 
@@ -34,6 +35,14 @@ public class EventBase {
 
     public void setEventType(EventType eventType) {
         this.eventType = eventType;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     public enum EventType {

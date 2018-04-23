@@ -1,4 +1,4 @@
-package auction.clients;
+package auction.datasources.clients;
 
 import auction.entities.Client;
 import config.Config;
@@ -10,17 +10,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class ClientDataService {
+public class ClientFileDatasource implements ClientDatasource {
 
-    private ClientDataService instance;
+    private ClientFileDatasource instance;
     private HashMap<String, Client> clients = new HashMap<>();
 
-    private ClientDataService() {
+    private ClientFileDatasource() {
         loadClientsFromFile();
     }
 
-    private ClientDataService getInstance() {
-        instance = instance == null ? new ClientDataService() : instance;
+    private ClientFileDatasource getInstance() {
+        instance = instance == null ? new ClientFileDatasource() : instance;
         return instance;
     }
 
