@@ -4,53 +4,102 @@ import java.time.LocalDateTime;
 
 public class Auction {
 
-    private Item auctionedItem;
-    private Client auctioneer;
-    private LocalDateTime dateStart;
-    private LocalDateTime dateEnd;
-    private LocalDateTime timestamp;
+    private String id;
+    private String itemId;
+    private String auctioneerId;
+    private double increaseFactor;
+    private double initialPrice;
+    private String winningBidderId;
+    private double winningBid = -1;
+    private LocalDateTime start;
+    private LocalDateTime end;
+    private boolean isActive;
 
     public Auction() {
 
     }
 
-    public Item getAuctionedItem() {
-        return auctionedItem;
+    public String getId() {
+        return id;
     }
 
-    public void setAuctionedItem(Item auctionedItem) {
-        this.auctionedItem = auctionedItem;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Client getAuctioneer() {
-        return auctioneer;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setAuctioneer(Client auctioneer) {
-        this.auctioneer = auctioneer;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 
-    public LocalDateTime getDateStart() {
-        return dateStart;
+    public String getAuctioneerId() {
+        return auctioneerId;
     }
 
-    public void setDateStart(LocalDateTime dateStart) {
-        this.dateStart = dateStart;
+    public void setAuctioneerId(String auctioneerId) {
+        this.auctioneerId = auctioneerId;
     }
 
-    public LocalDateTime getDateEnd() {
-        return dateEnd;
+    public double getIncreaseFactor() {
+        return increaseFactor;
     }
 
-    public void setDateEnd(LocalDateTime dateEnd) {
-        this.dateEnd = dateEnd;
+    public void setIncreaseFactor(double increaseFactor) {
+        this.increaseFactor = increaseFactor;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public double getInitialPrice() {
+        return initialPrice;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setInitialPrice(double initialPrice) {
+        this.initialPrice = initialPrice;
+    }
+
+    public String getWinningBidderId() {
+        return winningBidderId;
+    }
+
+    public void setWinningBidderId(String winningBidderId) {
+        this.winningBidderId = winningBidderId;
+    }
+
+    public double getWinningBid() {
+        return winningBid;
+    }
+
+    public void setWinningBid(double winningBid) {
+        this.winningBid = winningBid;
+    }
+
+    public double getNextMinimumBid() {
+        return winningBid != -1 ? winningBid * increaseFactor : initialPrice;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public LocalDateTime getEnd() {
+        return end;
+    }
+
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+<entry key="mongodb-host">localhost</entry>
+<entry key="mongodb-database">auction-platform</entry>
+<entry key="ring-buffer-size">65536</entry>
+<entry key="events-file">events.data</entry>
+<entry key="items-file">items.data</entry>
+<entry key="clients-file">clients.data</entry>
+</properties>

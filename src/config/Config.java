@@ -19,10 +19,12 @@ public class Config {
                 } else {
                     f.createNewFile();
                     props = new Properties();
-                    props.setProperty("EventsFile", "events.data");
-                    props.setProperty("ItemsFile", "items.data");
-                    props.setProperty("ClientsFile", "clients.data");
-                    props.setProperty("RingBufferSize", "65536");
+                    props.setProperty("events-file", "events.data");
+                    props.setProperty("items-file", "items.data");
+                    props.setProperty("clients-file", "clients.data");
+                    props.setProperty("ring-buffer-size", "65536");
+                    props.setProperty("mongodb-host", "localhost");
+                    props.setProperty("mongodb-database", "auction-platform");
                     props.storeToXML(new FileOutputStream(f), "");
                 }
             }

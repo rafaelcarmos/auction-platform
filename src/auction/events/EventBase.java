@@ -1,13 +1,21 @@
 package auction.events;
 
+import org.bson.Document;
+
 import java.time.LocalDateTime;
 
 public class EventBase {
+
+    private Object target;
 
     private String rawMessage;
     private LocalDateTime timestamp;
     private EventType eventType;
     private Event event;
+
+    public Object getTarget() {
+        return target;
+    }
 
     public EventBase() {
 
@@ -45,9 +53,21 @@ public class EventBase {
         this.event = event;
     }
 
+    public void setTarget(Object target) {
+        this.target = target;
+    }
+
+    public Document getDocument() {
+        Document doc = new Document();
+        doc.append("type", eventType.toString());
+        doc.append("timestamp", timestamp.toString());
+        doc.append("event", event.getDocument());
+        return doc;
+    }
+
     public enum EventType {
         BID,
-        NEW_AUCTION,
-        END_AUCTION
+        AUCTION_START,
+        AUCTION_END
     }
 }

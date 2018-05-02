@@ -2,19 +2,19 @@ package auction.entities;
 
 public class Client {
 
-    private String clientId;
+    private String id;
     private String name;
 
     public Client() {
 
     }
 
-    public String getClientId() {
-        return clientId;
+    public String getId() {
+        return id;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
